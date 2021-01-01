@@ -1,0 +1,8 @@
+#omikujiResult {
+  position: absolute;
+  z-index: 20;
+  color: #000;
+  font-size: 300%;
+  top: 50%;
+  left: 50%;
+}
