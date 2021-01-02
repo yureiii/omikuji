@@ -7,18 +7,20 @@
   <script src="https://cdn.rawgit.com/niklasvh/html2canvas/83e9b85e/dist/html2canvas.min.js"></script>
   <script src="https://cdn.rawgit.com/mayognaise/aframe-html-shader/403af081/dist/aframe-html-shader.min.js"></script>
   <script src="https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="omikujiResult">test</div>
-  <a-scene>
+  <a-scene embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false">
     <a-camera>
       <a-cursor fuse="true" fuse-timeout="1000"></a-cursor>
     </a-camera>
-    <a-entity id="omikuji" geometry="primitive: box" position="0 0.5 -5" material="color: #000000"></a-entity>
-    <!-- 床 -->
-    <a-entity id="floor" geometry="primitive: plane; height: 0.1; width: 0.1" position="0 0 -3" rotation="0 0 0" material="color: green">></a-entity>
-    <a-sky material="color: #ECECEC"></a-sky>
+    <a-marker preset="hiro">
+      <a-entity id="omikuji" geometry="primitive: box" position="0 0 0" material="color: #000000"></a-entity>
+      <!-- 床 -->
+      <a-entity id="floor" geometry="primitive: plane; height: 0.1; width: 0.1" position="0 -2 0" rotation="0 0 0" material="color: green">></a-entity>
+    </a-marker>
   </a-scene>
   <script src="divination.js"></script>
 </body>
