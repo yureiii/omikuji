@@ -16,9 +16,10 @@ var timeout;
 const floor = document.getElementById('floor');
 // カメラカーソルが床から離れると床が前方に出ながら大きくなり, 時間がたつと showOmikujiResult 関数を呼び出す
 omikuji.addEventListener('mouseleave', (e) => {
-  const enlargementTime = 1700;
+  const enlargementTime = 2000;
   // 移動先の設定が 300 300 300 となっているが, これをうまいこと変数で表したい
-  floor.setAttribute('animation', 'property: scale; dur: ' + enlargementTime + '; to: 300 300 300');
+  floor.setAttribute('animation__increasingInSize', 'property: scale; dur: ' + enlargementTime + '; to: 300 300 300');
+  floor.setAttribute('animation__moveUpward', 'property: position; dur: ' + enlargementTime + '; to: 0 10 0');
   audio.pause();
   timeout = window.setTimeout(showOmikujiResult, enlargementTime);
 });
