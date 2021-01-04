@@ -11,13 +11,15 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="omikujiResult">test</div>
+  <div id="omikujiResult"></div>
   <a-scene embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false">
+    <a-asset-item id="obj_kuji" src="model/kuji.obj"></a-asset-item>
+    <a-asset-item id="mtl-kuji" src="model/kuji.mtl"></a-asset-item>
     <a-camera>
       <a-cursor fuse="true" fuse-timeout="1000"></a-cursor>
     </a-camera>
     <a-marker preset="hiro">
-      <a-entity id="omikuji" geometry="primitive: box" position="0 0 0" material="color: #000000"></a-entity>
+      <a-obj-model src="#obj-mikuji" mtl="#mtl-kuji" position="0 0 0"></a-obj-model>
       <!-- 床 -->
       <a-entity id="floor" geometry="primitive: plane; height: 0.1; width: 0.1" position="0 -0.1 0" rotation="0 0 0" material="color: green">></a-entity>
     </a-marker>
