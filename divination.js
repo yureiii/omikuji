@@ -2,7 +2,7 @@ const omikuji = document.getElementById('omikuji');
 var audio = new Audio("seund/tm2_can004.wav");
 // カメラカーソルが物体を振れている状態でクリックをすると音を立てて回りだす
 omikuji.addEventListener('mouseenter', (e) => {
-  omikuji.setAttribute('animation', 'property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear;');
+  omikuji.setAttribute('animation', 'property: rotation; to: -90 360 0; loop: true; dur: 3000; easing: linear;');
   audio = new Audio();
   audio.src = "sound/tm2_can004.wav";
   audio.play();
