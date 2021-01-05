@@ -19,7 +19,7 @@ omikuji.addEventListener('mouseleave', (e) => {
   const enlargementTime = 1700;
   // 移動先の設定が 300 300 300 となっているが, これをうまいこと変数で表したい
   floor.setAttribute('animation__increasingInSize', 'property: scale; dur: ' + enlargementTime + '; to: 300 300 300');
-  floor.setAttribute('animation__moveUpward', 'property: position; dur: ' + enlargementTime + '; to: 0 10 0');
+  floor.setAttribute('animation__moveUpward', 'property: position; dur: ' + enlargementTime + '; to: 0 5 0');
   audio.pause();
   timeout = window.setTimeout(showOmikujiResult, enlargementTime);
 });
